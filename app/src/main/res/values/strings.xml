@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HorasEstudo</string>
+    <string-array name="names">
+        <item>Java</item>
+        <item>Web</item>
+        <item>Android</item>
+    </string-array>
+    <string name="botao">
+        <item>Cadastro</item>
+    </string>
+</resources>
