@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         lista = (ListView) findViewById(R.id.lstRes);
         textView = (TextView) findViewById(R.id.edtMateria);
 
+        CadastroActivity cadastroActivity = new CadastroActivity();
+
+        cadastroActivity.recuperar();
+
 
 
 
