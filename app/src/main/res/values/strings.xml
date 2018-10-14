@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HorasEstudo</string>
+    <string name="app_name">Horas Estudo</string>
     <string-array name="names">
         <item>Java</item>
         <item>Web</item>
