@@ -14,7 +14,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="160dp"
         android:layout_marginTop="98dp"
-        android:text="Texto"
         tools:layout_editor_absoluteX="163dp"
         tools:layout_editor_absoluteY="91dp" />
 
@@ -54,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/txtSomMa"
         android:layout_centerVertical="true"
-        android:text="TextView" />
+        android:text="0" />
 
     <Button
         android:id="@+id/btnSomGra"

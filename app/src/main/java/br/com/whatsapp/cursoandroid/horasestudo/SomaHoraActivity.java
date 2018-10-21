@@ -1,7 +1,6 @@
 package br.com.whatsapp.cursoandroid.horasestudo;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,10 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class SomaHoraActivity extends AppCompatActivity {
 
@@ -37,14 +32,14 @@ public class SomaHoraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_soma_hora);
 
 
-        banco = openOrCreateDatabase("teste", MODE_PRIVATE, null);
+        banco = openOrCreateDatabase("testee", MODE_PRIVATE, null);
 
 
-        mais = (Button) findViewById(R.id.btnSoMa);
-        menos = (Button) findViewById(R.id.btnSoMe);
-        materia = (TextView) findViewById(R.id.txtSomMa);
-        hora = (TextView) findViewById(R.id.txtSomaHora);
-        btnGravar = (Button) findViewById(R.id.btnSomGra);
+        mais =  findViewById(R.id.btnSoMa);
+        menos =  findViewById(R.id.btnSoMe);
+        materia =  findViewById(R.id.txtSomMa);
+        hora =  findViewById(R.id.txtSomaHora);
+        btnGravar =  findViewById(R.id.btnSomGra);
 
         getMateria();
         somar();
@@ -62,7 +57,6 @@ public class SomaHoraActivity extends AppCompatActivity {
         });
 
 
-        Toast.makeText(getApplicationContext(), Integer.toString(id), Toast.LENGTH_SHORT).show();
 
 
     }
@@ -70,7 +64,7 @@ public class SomaHoraActivity extends AppCompatActivity {
     public void getMateria() {
 
 
-        nomeMAteria = (TextView) findViewById(R.id.txtSomMa);
+        nomeMAteria =  findViewById(R.id.txtSomMa);
 
         Intent i = getIntent();
 
@@ -117,6 +111,8 @@ public class SomaHoraActivity extends AppCompatActivity {
                 inteiro = c / 60;
                 resto = c % 60;
 
+                somaTudo = (inteiro * 60) + resto;
+
                 hora.setText(Integer.toString(inteiro) + ":" + Integer.toString(resto));
 
 
@@ -128,7 +124,7 @@ public class SomaHoraActivity extends AppCompatActivity {
     public void gravar() {
 
 
-        banco.execSQL("UPDATE estudos SET hora ='" + somaTudo + "'  WHERE id ='" + id + "' ");
+        banco.execSQL("UPDATE estudos SET hora = hora +'" + somaTudo + "'  WHERE id ='" + id + "' ");
 
         Intent i = new Intent(SomaHoraActivity.this, MainActivity.class);
 
@@ -136,7 +132,6 @@ public class SomaHoraActivity extends AppCompatActivity {
         startActivity(i);
 
 
-        Toast.makeText(getApplicationContext(), "GRAVADO", Toast.LENGTH_SHORT).show();
 
 
     }

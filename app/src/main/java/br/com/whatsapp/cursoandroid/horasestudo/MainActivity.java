@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         textoExib = (TextView) findViewById(R.id.txtMainExi);
 
 
-
-
         recuperar();
 
 
@@ -68,20 +66,24 @@ public class MainActivity extends AppCompatActivity {
 
 
                 String nome = itens.get(position);
-                 banco = openOrCreateDatabase("teste", MODE_PRIVATE, null);
-                 Cursor cursor = banco.rawQuery("SELECT hora FROM estudos WHERE materia = '"+nome+"'",null);
+                banco = openOrCreateDatabase("testee", MODE_PRIVATE, null);
+                Cursor cursor = banco.rawQuery("SELECT hora FROM estudos WHERE materia = '" + nome + "'", null);
                 cursor.moveToFirst();
 
-                int hora = cursor.getColumnIndex("hora");
 
-                String hMat = cursor.getString(hora);
+                int minu = cursor.getColumnIndex("hora");
 
-
-                textoExib.setText(hMat);
+                int v = cursor.getInt(minu);
 
 
+                int r = v / 60;
+                int rest = r % 60;
+
+                textoExib.setText(Integer.toString(r) + ":" + Integer.toString(rest));
 
 
+
+                cursor.close();
 
 
             }
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void recuperar() {
         try {
-            banco = openOrCreateDatabase("teste", MODE_PRIVATE, null);
+            banco = openOrCreateDatabase("testee", MODE_PRIVATE, null);
 
 
             Cursor cursor = banco.rawQuery("SELECT * FROM estudos ORDER BY id DESC", null);
