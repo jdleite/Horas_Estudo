@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:foregroundGravity="center_vertical|center_horizontal"
     tools:context=".SomaHoraActivity">
 
     <TextView
@@ -36,7 +37,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="236dp"
-        android:text="Mais" />
+        android:background="@android:color/background_light"
+        android:text="Mais"
+        android:textAlignment="center"
+        android:textColor="@color/primeiro" />
 
     <Button
         android:id="@+id/btnSoMe"
@@ -46,24 +50,28 @@
         android:layout_marginStart="22dp"
         android:layout_marginBottom="-3dp"
         android:layout_toEndOf="@+id/textView"
-        android:text="Menos" />
+        android:background="@android:color/background_light"
+        android:text="Menos"
+        android:textAlignment="center"
+        android:textColor="@color/primeiro" />
+
 
     <TextView
         android:id="@+id/txtSomaHora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtSomMa"
-        android:layout_centerVertical="true"
-        android:text="0" />
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="240dp"
+        android:textSize="@dimen/dimensao_numero" />
 
     <Button
         android:id="@+id/btnSomGra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtSomMa"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-188dp"
-        android:layout_marginBottom="44dp"
-        android:text="Gravar" />
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/background_light"
+        android:text="Gravar"
+        android:textColor="@color/primeiro" />
 
 </RelativeLayout>

@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
+
+import java.text.DecimalFormat;
 
 
 public class SomaHoraActivity extends AppCompatActivity {
@@ -35,11 +38,11 @@ public class SomaHoraActivity extends AppCompatActivity {
         banco = openOrCreateDatabase("testee", MODE_PRIVATE, null);
 
 
-        mais =  findViewById(R.id.btnSoMa);
-        menos =  findViewById(R.id.btnSoMe);
-        materia =  findViewById(R.id.txtSomMa);
-        hora =  findViewById(R.id.txtSomaHora);
-        btnGravar =  findViewById(R.id.btnSomGra);
+        mais = findViewById(R.id.btnSoMa);
+        menos = findViewById(R.id.btnSoMe);
+        materia = findViewById(R.id.txtSomMa);
+        hora = findViewById(R.id.txtSomaHora);
+        btnGravar = findViewById(R.id.btnSomGra);
 
         getMateria();
         somar();
@@ -57,14 +60,12 @@ public class SomaHoraActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     public void getMateria() {
 
 
-        nomeMAteria =  findViewById(R.id.txtSomMa);
+        nomeMAteria = findViewById(R.id.txtSomMa);
 
         Intent i = getIntent();
 
@@ -82,6 +83,8 @@ public class SomaHoraActivity extends AppCompatActivity {
 
     public void somar() {
 
+        final DecimalFormat df = new DecimalFormat("00");
+
 
         mais.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +96,10 @@ public class SomaHoraActivity extends AppCompatActivity {
                 resto = c % 60;
                 somaTudo = (inteiro * 60) + resto;
 
-                hora.setText(Integer.toString(inteiro) + ":" + Integer.toString(resto));
+
+
+                hora.setText(Integer.toString(inteiro) + ":" + df.format(resto));
+
 
 
             }
@@ -130,8 +136,6 @@ public class SomaHoraActivity extends AppCompatActivity {
 
 
         startActivity(i);
-
-
 
 
     }

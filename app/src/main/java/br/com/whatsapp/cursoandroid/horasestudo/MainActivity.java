@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> ids;
     private TextView textoExib;
     private int indTare;
+    final DecimalFormat df = new DecimalFormat("00");
 
 
     @Override
@@ -77,9 +79,10 @@ public class MainActivity extends AppCompatActivity {
 
 
                 int r = v / 60;
-                int rest = r % 60;
+                int rest = v % 60;
 
-                textoExib.setText(Integer.toString(r) + ":" + Integer.toString(rest));
+                textoExib.setText(Integer.toString(r) + ":" + df.format(rest));
+
 
 
 
@@ -107,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
             ids = new ArrayList<Integer>();
 
-            itensAda = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, android.R.id.text1, itens);
+            itensAda = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_2, android.R.id.text1, itens);
             listaMateria.setAdapter(itensAda);
 
             cursor.moveToFirst();
