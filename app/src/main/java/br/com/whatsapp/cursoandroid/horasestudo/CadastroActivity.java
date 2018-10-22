@@ -65,7 +65,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     public void bancoAce() {
 
-        banco = openOrCreateDatabase("testee", MODE_PRIVATE, null);
+        banco = openOrCreateDatabase("estudo", MODE_PRIVATE, null);
         banco.execSQL("CREATE TABLE IF NOT EXISTS estudos(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "materia VARCHAR," +
                 "hora INTEGER)");

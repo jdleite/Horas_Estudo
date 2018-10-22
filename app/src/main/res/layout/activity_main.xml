@@ -47,7 +47,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="230dp"
         android:layout_marginTop="200dp"
-        android:text="0000"
         android:textColor="@android:color/darker_gray"
         android:textSize="@dimen/dimensao_numero" />
 
@@ -65,11 +64,11 @@
         android:id="@+id/txtHoMi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Horas/Minutos"
         android:layout_marginLeft="242dp"
         android:layout_marginTop="260dp"
-        android:text="Horas/Minutos"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="10sp" />
+        android:textSize="10sp"
+        />
 
 
 

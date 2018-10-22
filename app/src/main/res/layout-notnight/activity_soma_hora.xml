@@ -8,26 +8,36 @@
     android:foregroundGravity="center_vertical|center_horizontal"
     tools:context=".SomaHoraActivity">
 
+
+    <ImageView
+        android:id="@+id/imgMateria"
+        android:background="@drawable/circulo"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+
+        />
+
+
     <TextView
         android:id="@+id/txtSomMa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="98dp"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="91dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtMateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/txtSomMa"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="160dp"
-        android:layout_marginBottom="54dp"
-        android:text="Matéria" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Matéria"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btnSoMa"
@@ -45,15 +55,12 @@
     <Button
         android:id="@+id/btnSoMe"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnSoMa"
-        android:layout_marginStart="22dp"
-        android:layout_marginBottom="-3dp"
-        android:layout_toEndOf="@+id/textView"
         android:background="@android:color/background_light"
+        android:layout_height="wrap_content"
         android:text="Menos"
-        android:textAlignment="center"
-        android:textColor="@color/primeiro" />
+        android:layout_marginTop="236dp"
+        android:textColor="@color/primeiro"
+        android:layout_marginLeft="250dp"/>
 
 
     <TextView
@@ -62,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="240dp"
+        android:text="00:00"
         android:textSize="@dimen/dimensao_numero" />
 
     <Button

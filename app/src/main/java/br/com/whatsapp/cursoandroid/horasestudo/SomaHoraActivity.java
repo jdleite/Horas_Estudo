@@ -35,7 +35,7 @@ public class SomaHoraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_soma_hora);
 
 
-        banco = openOrCreateDatabase("testee", MODE_PRIVATE, null);
+        banco = openOrCreateDatabase("estudo", MODE_PRIVATE, null);
 
 
         mais = findViewById(R.id.btnSoMa);

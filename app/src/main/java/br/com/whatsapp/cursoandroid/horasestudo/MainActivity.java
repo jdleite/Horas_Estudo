@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 String nome = itens.get(position);
-                banco = openOrCreateDatabase("testee", MODE_PRIVATE, null);
+                banco = openOrCreateDatabase("estudo", MODE_PRIVATE, null);
                 Cursor cursor = banco.rawQuery("SELECT hora FROM estudos WHERE materia = '" + nome + "'", null);
                 cursor.moveToFirst();
 
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 int r = v / 60;
                 int rest = v % 60;
 
-                textoExib.setText(Integer.toString(r) + ":" + df.format(rest));
+                textoExib.setText(df.format(r) + ":" + df.format(rest));
 
 
 
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void recuperar() {
         try {
-            banco = openOrCreateDatabase("testee", MODE_PRIVATE, null);
+            banco = openOrCreateDatabase("estudo", MODE_PRIVATE, null);
 
 
             Cursor cursor = banco.rawQuery("SELECT * FROM estudos ORDER BY id DESC", null);
